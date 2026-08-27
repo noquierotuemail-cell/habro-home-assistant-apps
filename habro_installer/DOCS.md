@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.7
+# HABRO Installer 0.1.8
 
 ## Qué hace
 
@@ -11,10 +11,11 @@
 - incorpora descarga anónima, staging inmutable y validación completa de la publicación firmada como módulo aislado, todavía sin aplicarla a Home Assistant.
 - incorpora preparación, intercambio atómico y rollback exacto de ambos componentes sobre una raíz nueva y aislada, todavía sin aplicarlos a Home Assistant.
 - conecta inventario, backup, staging, commit conjunto y rollback en una transacción reanudable sobre raíces aisladas, todavía sin activarla desde la interfaz.
+- construye en sandbox un candidato completo que sustituye solo los dos dominios HABRO y conserva byte a byte las demás integraciones, sin intercambiarlo con el destino activo.
 
 ## Qué no hace todavía
 
-No instala, actualiza, repara, elimina ni reinicia Home Assistant. La transacción aislada todavía no está conectada a la interfaz ni solicita credenciales EBRO.
+No instala, actualiza, repara, elimina ni reinicia Home Assistant. La transacción y el candidato de destino activo permanecen aislados, no están conectados a la interfaz ni solicitan credenciales EBRO.
 
 ## Uso
 
