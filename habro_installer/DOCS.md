@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.5
+# HABRO Installer 0.1.6
 
 ## Qué hace
 
@@ -9,10 +9,11 @@
 - incorpora la base persistente y reanudable de la futura instalación, aislada en los datos propios de la app;
 - incorpora inventario y backup verificable/restaurable de ambos componentes como módulo aislado, todavía sin ejecutarlo contra Home Assistant.
 - incorpora descarga anónima, staging inmutable y validación completa de la publicación firmada como módulo aislado, todavía sin aplicarla a Home Assistant.
+- incorpora preparación, intercambio atómico y rollback exacto de ambos componentes sobre una raíz nueva y aislada, todavía sin aplicarlos a Home Assistant.
 
 ## Qué no hace todavía
 
-No instala, actualiza, repara, elimina ni reinicia Home Assistant. La máquina de estados, el backup y el staging todavía no están conectados a la interfaz ni solicitan credenciales EBRO.
+No instala, actualiza, repara, elimina ni reinicia Home Assistant. La máquina de estados, el backup, el staging y el commit conjunto todavía no están conectados a la interfaz ni solicitan credenciales EBRO.
 
 ## Uso
 
