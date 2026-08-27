@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.8
+# HABRO Installer 0.1.9
 
 ## Qué hace
 
@@ -12,10 +12,11 @@
 - incorpora preparación, intercambio atómico y rollback exacto de ambos componentes sobre una raíz nueva y aislada, todavía sin aplicarlos a Home Assistant.
 - conecta inventario, backup, staging, commit conjunto y rollback en una transacción reanudable sobre raíces aisladas, todavía sin activarla desde la interfaz.
 - construye en sandbox un candidato completo que sustituye solo los dos dominios HABRO y conserva byte a byte las demás integraciones, sin intercambiarlo con el destino activo.
+- persiste y revalida la evidencia del candidato, lo intercambia de forma atómica en sandbox y ejecuta rollback exacto y reanudable ante fallos o interrupciones.
 
 ## Qué no hace todavía
 
-No instala, actualiza, repara, elimina ni reinicia Home Assistant. La transacción y el candidato de destino activo permanecen aislados, no están conectados a la interfaz ni solicitan credenciales EBRO.
+No instala, actualiza, repara, elimina ni reinicia Home Assistant. La transacción, el candidato y su commit activo permanecen aislados, no están conectados a la interfaz ni solicitan credenciales EBRO.
 
 ## Uso
 
