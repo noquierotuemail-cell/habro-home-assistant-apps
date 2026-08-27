@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.13
+# HABRO Installer 0.1.14
 
 ## Qué hace
 
@@ -17,6 +17,7 @@
 - incorpora una capacidad de escritura persistente, inmutable y denegada por defecto, ligada a la transacción, publicación, hashes y destino exactos; todavía no la activa desde la interfaz.
 - separa preparación y aprobación, liga la capacidad al coordinador inmediatamente antes de crear el candidato y prueba la operación completa sobre una réplica exacta de `/homeassistant/custom_components`.
 - persiste y revalida un preflight de solo lectura del destino exacto: permisos, montaje, dispositivo, espacio, topología, API atómica y ausencia de cambios concurrentes.
+- incorpora una única operación reanudable con bloqueo entre procesos y una política HTTP que exige Ingress, mismo origen, CSRF y JSON acotado; ambos contratos permanecen desconectados de la interfaz.
 
 ## Qué no hace todavía
 
