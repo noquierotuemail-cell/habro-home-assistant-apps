@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.2
+# HABRO Installer 0.1.3
 
 ## Qué hace
 
@@ -6,10 +6,11 @@
 - detecta los archivos de EBRO Auto y HABRO Companion;
 - comprueba si Home Assistant ha cargado ambos dominios;
 - muestra bloqueos con lenguaje comprensible.
+- incorpora la base persistente y reanudable de la futura instalación, aislada en los datos propios de la app.
 
 ## Qué no hace todavía
 
-No instala, actualiza, repara, elimina ni reinicia Home Assistant. Tampoco solicita credenciales EBRO.
+No instala, actualiza, repara, elimina ni reinicia Home Assistant. La máquina de estados todavía no está conectada a la interfaz ni solicita credenciales EBRO.
 
 ## Uso
 
