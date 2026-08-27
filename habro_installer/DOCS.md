@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.10
+# HABRO Installer 0.1.11
 
 ## Qué hace
 
@@ -14,6 +14,7 @@
 - construye en sandbox un candidato completo que sustituye solo los dos dominios HABRO y conserva byte a byte las demás integraciones, sin intercambiarlo con el destino activo.
 - persiste y revalida la evidencia del candidato, lo intercambia de forma atómica en sandbox y ejecuta rollback exacto y reanudable ante fallos o interrupciones.
 - coordina en un único sandbox inventario, backup, staging firmado, candidato completo, commit activo y rollback, con reanudación desde cada checkpoint sin repetir una mutación ya confirmada.
+- incorpora una capacidad de escritura persistente, inmutable y denegada por defecto, ligada a la transacción, publicación, hashes y destino exactos; todavía no la activa desde la interfaz.
 
 ## Qué no hace todavía
 
