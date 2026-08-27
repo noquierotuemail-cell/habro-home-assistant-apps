@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.15
+# HABRO Installer 0.1.16
 
 ## Qué hace
 
@@ -19,6 +19,7 @@
 - persiste y revalida un preflight de solo lectura del destino exacto: permisos, montaje, dispositivo, espacio, topología, API atómica y ausencia de cambios concurrentes.
 - incorpora una única operación reanudable con bloqueo entre procesos y una política HTTP que exige Ingress, mismo origen, CSRF y JSON acotado; ambos contratos permanecen desconectados de la interfaz.
 - conecta la operación a una interfaz guiada con preparación, aprobación, ejecución y rollback separados. La aplicación solo construye como destino `/homeassistant/custom_components` y revalida la capacidad y el preflight inmediatamente antes de mutar.
+- reduce el recorrido normal a una acción inicial y una sola confirmación comprensible. Los pasos internos permanecen separados, y un rollback pendiente se reanuda sin exponer controles técnicos.
 
 ## Qué no hace todavía
 
