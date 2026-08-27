@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.14
+# HABRO Installer 0.1.15
 
 ## Qué hace
 
@@ -18,10 +18,11 @@
 - separa preparación y aprobación, liga la capacidad al coordinador inmediatamente antes de crear el candidato y prueba la operación completa sobre una réplica exacta de `/homeassistant/custom_components`.
 - persiste y revalida un preflight de solo lectura del destino exacto: permisos, montaje, dispositivo, espacio, topología, API atómica y ausencia de cambios concurrentes.
 - incorpora una única operación reanudable con bloqueo entre procesos y una política HTTP que exige Ingress, mismo origen, CSRF y JSON acotado; ambos contratos permanecen desconectados de la interfaz.
+- conecta la operación a una interfaz guiada con preparación, aprobación, ejecución y rollback separados. La aplicación solo construye como destino `/homeassistant/custom_components` y revalida la capacidad y el preflight inmediatamente antes de mutar.
 
 ## Qué no hace todavía
 
-No instala, actualiza, repara, elimina ni reinicia Home Assistant. La ruta autorizada permanece montada en solo lectura y la transacción con capacidad se ejecuta únicamente sobre réplicas de prueba; no está conectada a la interfaz ni solicita credenciales EBRO.
+No reinicia Home Assistant ni configura las integraciones. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`. La operación requiere preparación y aprobación visibles y no solicita credenciales EBRO.
 
 ## Uso
 
