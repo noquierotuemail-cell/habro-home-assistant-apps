@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.9
+# HABRO Installer 0.1.10
 
 ## Qué hace
 
@@ -13,10 +13,11 @@
 - conecta inventario, backup, staging, commit conjunto y rollback en una transacción reanudable sobre raíces aisladas, todavía sin activarla desde la interfaz.
 - construye en sandbox un candidato completo que sustituye solo los dos dominios HABRO y conserva byte a byte las demás integraciones, sin intercambiarlo con el destino activo.
 - persiste y revalida la evidencia del candidato, lo intercambia de forma atómica en sandbox y ejecuta rollback exacto y reanudable ante fallos o interrupciones.
+- coordina en un único sandbox inventario, backup, staging firmado, candidato completo, commit activo y rollback, con reanudación desde cada checkpoint sin repetir una mutación ya confirmada.
 
 ## Qué no hace todavía
 
-No instala, actualiza, repara, elimina ni reinicia Home Assistant. La transacción, el candidato y su commit activo permanecen aislados, no están conectados a la interfaz ni solicitan credenciales EBRO.
+No instala, actualiza, repara, elimina ni reinicia Home Assistant. La transacción activa completa permanece aislada, no está conectada a la interfaz ni solicita credenciales EBRO.
 
 ## Uso
 
