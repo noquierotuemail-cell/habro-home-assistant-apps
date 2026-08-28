@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.27
+
+- Conecta instalación, reinicio de Home Assistant Core y verificación posterior mediante un único recorrido reanudable.
+- Declara el rol mínimo `homeassistant` de Supervisor; no concede permisos de backup, host, red, sistema operativo, apps ni administración.
+- Añade una continuación automática protegida por Ingress y CSRF, sin mostrar un segundo botón ni repetir el reinicio.
+- Reintenta mientras Core arranca y ejecuta rollback automático únicamente ante una discrepancia determinista de la evidencia.
+- Bloquea redirecciones y limita destinos, tiempo y tamaño al consultar Supervisor después del reinicio.
+
+## 0.1.26
+
+- Añade la verificación reanudable posterior al reinicio sin conectarla todavía a Ingress.
+- Exige respuesta coherente de Supervisor y de la API de Core, recibo aceptado, versiones autorizadas y árbol activo exacto.
+- Solo entonces avanza el journal a `completed`; una indisponibilidad o discrepancia conserva `verifying_after_restart`.
+
+## 0.1.25
+
+- Añade el contrato aislado para comprobar la configuración y solicitar un único reinicio de Home Assistant Core.
+- Persiste un recibo privado ligado a la transacción y a la revisión exacta del journal antes de llamar a Supervisor.
+- Si la confirmación del reinicio es ambigua, bloquea la repetición automática en vez de arriesgar un segundo reinicio.
+- No conecta todavía el reinicio a la API, la interfaz ni el Green.
+
 ## 0.1.24
 
 - Entrega primero una pantalla Ingress completa sin esperar diagnóstico, hashes ni verificación transaccional.
