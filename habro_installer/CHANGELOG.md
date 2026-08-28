@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.23
+
+- Restaura la ruta exacta `installer.js` compatible con Ingress.
+- Conserva la evidencia renderizada en el HTML inicial sin depender de una consulta de versión.
+- Mantiene la transacción en `restart_pending` sin repetir ninguna escritura.
+
 ## 0.1.22
 
 - Renderiza la evidencia segura desde el servidor para que no dependa del JavaScript del WebView.
