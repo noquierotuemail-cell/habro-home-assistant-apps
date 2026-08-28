@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.29
+
+- Corrige el smoke físico de 0.1.28: `/core/check` importó los componentes y creó bytecode bajo `__pycache__`, que la huella del árbol completo interpretó como una alteración del código.
+- Verifica una proyección estable que excluye únicamente `.pyc` válidos ligados a su fuente `.py`; cualquier otro archivo, enlace o caché mal formada continúa bloqueando la operación.
+- Reconstruye el candidato desde staging, rollback y plan persistidos antes de aceptar esa proyección, sin confiar en el árbol activo por sí solo.
+- Recupera automáticamente el journal físico `failed` solo cuando coinciden el historial exacto, el recibo del único reinicio, los artefactos persistentes y el código activo normalizado.
+
 ## 0.1.28
 
 - Corrige el smoke físico de 0.1.27: la comprobación válida de Home Assistant tardó más de 30 segundos y HABRO la canceló antes de que Supervisor respondiera.
