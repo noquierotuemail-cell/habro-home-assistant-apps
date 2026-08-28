@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.24
+# HABRO Installer 0.1.27
 
 ## Qué hace
 
@@ -7,10 +7,10 @@
 - comprueba si Home Assistant ha cargado ambos dominios;
 - muestra bloqueos con lenguaje comprensible;
 - incorpora la base persistente y reanudable de la futura instalación, aislada en los datos propios de la app;
-- incorpora inventario y backup verificable/restaurable de ambos componentes como módulo aislado, todavía sin ejecutarlo contra Home Assistant.
-- incorpora descarga anónima, staging inmutable y validación completa de la publicación firmada como módulo aislado, todavía sin aplicarla a Home Assistant.
-- incorpora preparación, intercambio atómico y rollback exacto de ambos componentes sobre una raíz nueva y aislada, todavía sin aplicarlos a Home Assistant.
-- conecta inventario, backup, staging, commit conjunto y rollback en una transacción reanudable sobre raíces aisladas, todavía sin activarla desde la interfaz.
+- ejecuta inventario y backup verificable/restaurable de ambos componentes antes de modificar el destino.
+- descarga anónimamente, prepara un staging inmutable y valida completamente la publicación firmada.
+- prepara un candidato completo y usa intercambio atómico y rollback exacto sobre el destino autorizado.
+- conecta inventario, backup, staging, commit conjunto y rollback en una única transacción reanudable.
 - construye en sandbox un candidato completo que sustituye solo los dos dominios HABRO y conserva byte a byte las demás integraciones, sin intercambiarlo con el destino activo.
 - persiste y revalida la evidencia del candidato, lo intercambia de forma atómica en sandbox y ejecuta rollback exacto y reanudable ante fallos o interrupciones.
 - coordina en un único sandbox inventario, backup, staging firmado, candidato completo, commit activo y rollback, con reanudación desde cada checkpoint sin repetir una mutación ya confirmada.
@@ -25,10 +25,14 @@
 - cuando la transacción alcanza `restart_pending` o `rolled_back`, vuelve a verificar journal, backup, staging y destino y muestra una evidencia copiable sin identificadores internos, rutas ni secretos.
 - entrega una pantalla Ingress completa antes de calcular el diagnóstico o verificar la evidencia transaccional; después carga ambos resultados en segundo plano sin bloquear la apertura.
 - sirve el JavaScript por la ruta exacta de Ingress, sin parámetros de consulta, y registra de forma segura cuándo termina cada respuesta HTTP.
+- comprueba la configuración, persiste una solicitud ligada al journal y pide una sola vez a Supervisor el reinicio de Home Assistant Core.
+- usa el rol mínimo `homeassistant` de Supervisor para consultar y reiniciar únicamente Core; no recibe permisos de backup, host, red, sistema operativo, apps ni administración.
+- verifica de forma reanudable Core operativo, recibo aceptado, versiones autorizadas y árbol activo exacto antes de completar el journal.
+- conecta ambas etapas al recorrido guiado: tras la única confirmación, HABRO continúa, reinicia exclusivamente Core, espera su regreso, verifica la instalación y completa o restaura sin controles técnicos adicionales.
 
 ## Qué no hace todavía
 
-No reinicia Home Assistant ni configura las integraciones. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`. La preparación automática no modifica los componentes activos; la sustitución requiere una aprobación visible y no solicita credenciales EBRO.
+No configura todavía las cuentas ni crea entradas de integración. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`. La preparación automática no modifica los componentes activos; la sustitución requiere una única aprobación visible y no solicita credenciales EBRO.
 
 ## Uso
 
