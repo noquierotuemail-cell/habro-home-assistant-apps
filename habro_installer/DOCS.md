@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.20
+# HABRO Installer 0.1.21
 
 ## Qué hace
 
@@ -22,6 +22,7 @@
 - inicia automáticamente el diagnóstico y la preparación al abrir la interfaz; la única acción humana dentro de HABRO antes del reinicio es la confirmación comprensible posterior a todas las verificaciones. Los pasos internos permanecen separados, y un rollback pendiente se reanuda sin exponer controles técnicos.
 - admite navegadores y WebViews autenticados de Home Assistant con metadatos de origen distintos o ausentes; sigue exigiendo gateway y ruta Ingress, CSRF, JSON y límite de cuerpo, y rechaza solicitudes marcadas como `cross-site`.
 - usa `renameat2(RENAME_EXCHANGE)` mediante el wrapper de libc o la syscall Linux fijada para `aarch64` y `amd64`, y mantiene el bloqueo seguro si el kernel o la arquitectura no son compatibles.
+- cuando la transacción alcanza `restart_pending` o `rolled_back`, vuelve a verificar journal, backup, staging y destino y muestra una evidencia copiable sin identificadores internos, rutas ni secretos.
 
 ## Qué no hace todavía
 
@@ -29,4 +30,4 @@ No reinicia Home Assistant ni configura las integraciones. El montaje de configu
 
 ## Uso
 
-Inicia la app y pulsa **Abrir interfaz web**. El informe se calcula de nuevo cada vez que recargas la pantalla.
+Inicia la app y pulsa **Abrir interfaz web**. El informe se calcula de nuevo cada vez que recargas la pantalla. Si existe una operación exportable, su evidencia segura aparece dentro de **Información de diagnóstico**.
