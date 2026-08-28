@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.28
+
+- Corrige el smoke físico de 0.1.27: la comprobación válida de Home Assistant tardó más de 30 segundos y HABRO la canceló antes de que Supervisor respondiera.
+- Usa plazos explícitos de 180 segundos para los trabajos de comprobación y reinicio de Core, manteniendo la exclusión mutua de la operación.
+- Registra únicamente la operación fija y el estado HTTP ante un rechazo de Supervisor, sin exponer su cuerpo ni datos internos.
+
 ## 0.1.27
 
 - Conecta instalación, reinicio de Home Assistant Core y verificación posterior mediante un único recorrido reanudable.
