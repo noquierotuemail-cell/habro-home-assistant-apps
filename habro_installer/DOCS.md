@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.16
+# HABRO Installer 0.1.17
 
 ## Qué hace
 
@@ -19,11 +19,11 @@
 - persiste y revalida un preflight de solo lectura del destino exacto: permisos, montaje, dispositivo, espacio, topología, API atómica y ausencia de cambios concurrentes.
 - incorpora una única operación reanudable con bloqueo entre procesos y una política HTTP que exige Ingress, mismo origen, CSRF y JSON acotado; ambos contratos permanecen desconectados de la interfaz.
 - conecta la operación a una interfaz guiada con preparación, aprobación, ejecución y rollback separados. La aplicación solo construye como destino `/homeassistant/custom_components` y revalida la capacidad y el preflight inmediatamente antes de mutar.
-- reduce el recorrido normal a una acción inicial y una sola confirmación comprensible. Los pasos internos permanecen separados, y un rollback pendiente se reanuda sin exponer controles técnicos.
+- inicia automáticamente el diagnóstico y la preparación al abrir la interfaz; la única acción humana dentro de HABRO antes del reinicio es la confirmación comprensible posterior a todas las verificaciones. Los pasos internos permanecen separados, y un rollback pendiente se reanuda sin exponer controles técnicos.
 
 ## Qué no hace todavía
 
-No reinicia Home Assistant ni configura las integraciones. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`. La operación requiere preparación y aprobación visibles y no solicita credenciales EBRO.
+No reinicia Home Assistant ni configura las integraciones. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`. La preparación automática no modifica los componentes activos; la sustitución requiere una aprobación visible y no solicita credenciales EBRO.
 
 ## Uso
 
