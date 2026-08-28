@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.24
+
+- Entrega primero una pantalla Ingress completa sin esperar diagnóstico, hashes ni verificación transaccional.
+- Carga después el estado, la evidencia segura y el diagnóstico sin bloquear la apertura de la interfaz.
+- Añade una prueba HTTP real que impide volver a acoplar la respuesta inicial a operaciones lentas.
+- Registra cuándo cada respuesta HTTP ha terminado de escribirse, sin incluir cabeceras ni secretos.
+
 ## 0.1.23
 
 - Restaura la ruta exacta `installer.js` compatible con Ingress.

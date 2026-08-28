@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.23
+# HABRO Installer 0.1.24
 
 ## Qué hace
 
@@ -23,8 +23,8 @@
 - admite navegadores y WebViews autenticados de Home Assistant con metadatos de origen distintos o ausentes; sigue exigiendo gateway y ruta Ingress, CSRF, JSON y límite de cuerpo, y rechaza solicitudes marcadas como `cross-site`.
 - usa `renameat2(RENAME_EXCHANGE)` mediante el wrapper de libc o la syscall Linux fijada para `aarch64` y `amd64`, y mantiene el bloqueo seguro si el kernel o la arquitectura no son compatibles.
 - cuando la transacción alcanza `restart_pending` o `rolled_back`, vuelve a verificar journal, backup, staging y destino y muestra una evidencia copiable sin identificadores internos, rutas ni secretos.
-- renderiza esa evidencia segura en la respuesta inicial de Ingress y conserva la copia verificada aunque el WebView no actualice su JavaScript correctamente.
-- sirve el JavaScript por la ruta exacta de Ingress, sin parámetros de consulta.
+- entrega una pantalla Ingress completa antes de calcular el diagnóstico o verificar la evidencia transaccional; después carga ambos resultados en segundo plano sin bloquear la apertura.
+- sirve el JavaScript por la ruta exacta de Ingress, sin parámetros de consulta, y registra de forma segura cuándo termina cada respuesta HTTP.
 
 ## Qué no hace todavía
 
@@ -32,4 +32,4 @@ No reinicia Home Assistant ni configura las integraciones. El montaje de configu
 
 ## Uso
 
-Inicia la app y pulsa **Abrir interfaz web**. El informe se calcula de nuevo cada vez que recargas la pantalla. Si existe una operación exportable, su evidencia segura aparece dentro de **Información de diagnóstico**.
+Inicia la app y pulsa **Abrir interfaz web**. La pantalla abre primero y calcula después el diagnóstico y el estado persistido. Si existe una operación exportable, la evidencia segura aparece en su propio bloque, sin necesidad de abrir la información de diagnóstico.
