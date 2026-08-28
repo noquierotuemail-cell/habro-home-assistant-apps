@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.21
+# HABRO Installer 0.1.22
 
 ## Qué hace
 
@@ -23,6 +23,7 @@
 - admite navegadores y WebViews autenticados de Home Assistant con metadatos de origen distintos o ausentes; sigue exigiendo gateway y ruta Ingress, CSRF, JSON y límite de cuerpo, y rechaza solicitudes marcadas como `cross-site`.
 - usa `renameat2(RENAME_EXCHANGE)` mediante el wrapper de libc o la syscall Linux fijada para `aarch64` y `amd64`, y mantiene el bloqueo seguro si el kernel o la arquitectura no son compatibles.
 - cuando la transacción alcanza `restart_pending` o `rolled_back`, vuelve a verificar journal, backup, staging y destino y muestra una evidencia copiable sin identificadores internos, rutas ni secretos.
+- renderiza esa evidencia segura en la respuesta inicial de Ingress y conserva la copia verificada aunque el WebView no actualice su JavaScript correctamente.
 
 ## Qué no hace todavía
 

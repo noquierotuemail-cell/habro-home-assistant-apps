@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.22
+
+- Renderiza la evidencia segura desde el servidor para que no dependa del JavaScript del WebView.
+- Versiona el activo de la interfaz y conserva una evidencia verificada durante el refresco.
+- Mantiene Home Assistant sin reiniciar y no repite ninguna etapa de la transacción.
+
 ## 0.1.21
 
 - Verifica de nuevo journal, backup, staging y destino sin repetir la transacción.
@@ -23,4 +29,3 @@
 - Corrige la preparación guiada desde navegadores y la app móvil de Home Assistant.
 - Mantiene el perímetro autenticado de Ingress y la protección CSRF.
 - Conserva en pantalla el motivo seguro cuando una preparación no puede empezar.
-
