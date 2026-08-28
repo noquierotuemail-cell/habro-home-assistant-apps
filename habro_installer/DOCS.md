@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.17
+# HABRO Installer 0.1.18
 
 ## Qué hace
 
@@ -17,9 +17,10 @@
 - incorpora una capacidad de escritura persistente, inmutable y denegada por defecto, ligada a la transacción, publicación, hashes y destino exactos; todavía no la activa desde la interfaz.
 - separa preparación y aprobación, liga la capacidad al coordinador inmediatamente antes de crear el candidato y prueba la operación completa sobre una réplica exacta de `/homeassistant/custom_components`.
 - persiste y revalida un preflight de solo lectura del destino exacto: permisos, montaje, dispositivo, espacio, topología, API atómica y ausencia de cambios concurrentes.
-- incorpora una única operación reanudable con bloqueo entre procesos y una política HTTP que exige Ingress, mismo origen, CSRF y JSON acotado; ambos contratos permanecen desconectados de la interfaz.
+- incorpora una única operación reanudable con bloqueo entre procesos y una política HTTP que exige el gateway y la ruta autenticada de Ingress, CSRF y JSON acotado; ambos contratos permanecen desconectados de la interfaz.
 - conecta la operación a una interfaz guiada con preparación, aprobación, ejecución y rollback separados. La aplicación solo construye como destino `/homeassistant/custom_components` y revalida la capacidad y el preflight inmediatamente antes de mutar.
 - inicia automáticamente el diagnóstico y la preparación al abrir la interfaz; la única acción humana dentro de HABRO antes del reinicio es la confirmación comprensible posterior a todas las verificaciones. Los pasos internos permanecen separados, y un rollback pendiente se reanuda sin exponer controles técnicos.
+- admite navegadores y WebViews autenticados de Home Assistant con metadatos de origen distintos o ausentes; sigue exigiendo gateway y ruta Ingress, CSRF, JSON y límite de cuerpo, y rechaza solicitudes marcadas como `cross-site`.
 
 ## Qué no hace todavía
 
