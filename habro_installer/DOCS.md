@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.22
+# HABRO Installer 0.1.23
 
 ## Qué hace
 
@@ -24,6 +24,7 @@
 - usa `renameat2(RENAME_EXCHANGE)` mediante el wrapper de libc o la syscall Linux fijada para `aarch64` y `amd64`, y mantiene el bloqueo seguro si el kernel o la arquitectura no son compatibles.
 - cuando la transacción alcanza `restart_pending` o `rolled_back`, vuelve a verificar journal, backup, staging y destino y muestra una evidencia copiable sin identificadores internos, rutas ni secretos.
 - renderiza esa evidencia segura en la respuesta inicial de Ingress y conserva la copia verificada aunque el WebView no actualice su JavaScript correctamente.
+- sirve el JavaScript por la ruta exacta de Ingress, sin parámetros de consulta.
 
 ## Qué no hace todavía
 
