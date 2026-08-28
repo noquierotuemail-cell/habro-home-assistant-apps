@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.20
+
+- Corrige el preflight en Alpine/musl cuando libc no exporta `renameat2`.
+- Usa la syscall Linux fijada para `aarch64` y `amd64` sin sustituir `RENAME_EXCHANGE` por una secuencia no atómica.
+- Mantiene el bloqueo seguro ante arquitectura, kernel o filesystem no compatibles.
+
 ## 0.1.19
 
 - Solo muestra la confirmación cuando el preflight físico sigue siendo válido.
