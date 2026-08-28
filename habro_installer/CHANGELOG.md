@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.21
+
+- Verifica de nuevo journal, backup, staging y destino sin repetir la transacción.
+- Muestra un informe copiable limitado a estados, versiones, recuentos y SHA-256.
+- Excluye UUID internos, rutas, fechas, URLs, archivos, cabeceras, tokens y credenciales.
+
 ## 0.1.20
 
 - Corrige el preflight en Alpine/musl cuando libc no exporta `renameat2`.
