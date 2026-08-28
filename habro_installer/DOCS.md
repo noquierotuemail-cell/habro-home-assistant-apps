@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.19
+# HABRO Installer 0.1.20
 
 ## Qué hace
 
@@ -21,6 +21,7 @@
 - conecta la operación a una interfaz guiada con preparación, aprobación, ejecución y rollback separados. La aplicación solo construye como destino `/homeassistant/custom_components` y revalida la capacidad y el preflight inmediatamente antes de mutar.
 - inicia automáticamente el diagnóstico y la preparación al abrir la interfaz; la única acción humana dentro de HABRO antes del reinicio es la confirmación comprensible posterior a todas las verificaciones. Los pasos internos permanecen separados, y un rollback pendiente se reanuda sin exponer controles técnicos.
 - admite navegadores y WebViews autenticados de Home Assistant con metadatos de origen distintos o ausentes; sigue exigiendo gateway y ruta Ingress, CSRF, JSON y límite de cuerpo, y rechaza solicitudes marcadas como `cross-site`.
+- usa `renameat2(RENAME_EXCHANGE)` mediante el wrapper de libc o la syscall Linux fijada para `aarch64` y `amd64`, y mantiene el bloqueo seguro si el kernel o la arquitectura no son compatibles.
 
 ## Qué no hace todavía
 
