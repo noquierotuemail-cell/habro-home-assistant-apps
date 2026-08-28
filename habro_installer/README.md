@@ -1,5 +1,5 @@
 # HABRO Installer
 
-App experimental para diagnosticar la preparación de una instalación HABRO sobre Home Assistant OS.
+App experimental para diagnosticar, preparar e instalar de forma transaccional HABRO sobre Home Assistant OS.
 
-Home Assistant continúa montado estrictamente en solo lectura: esta versión no instala, actualiza, elimina ni reinicia componentes. La transacción autorizada y su preflight persistente se prueban únicamente sobre una réplica exacta del destino; todavía no están conectados a la interfaz.
+La preparación comienza automáticamente al abrir Ingress, pero no modifica los componentes activos. La sustitución conjunta de EBRO Auto y HABRO Companion solo se ejecuta tras una confirmación visible y queda restringida por código a `/homeassistant/custom_components`. Esta versión todavía no reinicia Home Assistant ni configura las integraciones.
