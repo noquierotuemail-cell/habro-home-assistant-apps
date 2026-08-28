@@ -1,5 +1,5 @@
 name: HABRO Installer
-version: "0.1.19"
+version: "0.1.20"
 slug: habro_installer
 description: Diagnóstico seguro para preparar la instalación desatendida de HABRO
 url: https://github.com/noquierotuemail-cell/habro-home-assistant-apps/tree/main/habro_installer
