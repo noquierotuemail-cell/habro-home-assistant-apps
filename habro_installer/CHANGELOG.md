@@ -10,7 +10,7 @@
 
 - Verifica las evidencias terminales de publicaciones anteriores únicamente contra la política firmada exacta con la que se instalaron.
 - Archiva de forma persistente el journal y el recibo de reinicio de una transacción terminal verificada antes de preparar una publicación posterior.
-- Permite que una instalación 2026.08.29.1 ya completada continúe de forma segura con la reparación 0.3.30 → 0.3.31, sin repetir EBRO Auto ni perder el historial.
+- Permite que una instalación 2026.08.29.1 ya completada continúe de forma segura: vuelve a verificar y publicar EBRO Auto 1.0.1 junto con la actualización de HABRO Companion 0.3.30 → 0.3.31, sin perder el historial.
 - Mantiene bloqueados los recibos desconocidos, las versiones no permitidas y cualquier transacción que todavía no sea terminal.
 
 ## 0.1.33
