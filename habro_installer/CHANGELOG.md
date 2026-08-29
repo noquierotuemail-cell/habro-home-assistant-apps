@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.37
+
+- Versiona la URL de `installer.js` para impedir que Home Assistant o su WebView combinen el HTML nuevo con un JavaScript anterior almacenado en caché.
+- Conserva la ruta anterior por compatibilidad, pero la Web UI carga siempre el activo exacto de 0.1.37 con `Cache-Control: no-store`.
+- Garantiza que la cuenta atrás visible de 10:00 se actualice cada segundo al abrir esta versión.
+
 ## 0.1.36
 
 - Muestra una cuenta atrás visible desde 10:00 durante la preparación y durante el recorrido de instalación, reinicio y verificación.
