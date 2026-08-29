@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.31
+
+- Muestra de forma persistente qué está haciendo HABRO, qué debe esperar la persona y cuál será el siguiente paso.
+- Indica no cerrar, recargar ni volver a iniciar HABRO Installer durante preparación, instalación, reinicio, verificación o restauración.
+- Evita que una preparación en curso vuelva a mostrar el mensaje `idle` y reserva **Reintentar preparación** para un fallo real y seguro.
+- No cambia la transacción, los permisos, los paquetes firmados ni la única confirmación de escritura visible.
+
 ## 0.1.30
 
 - Autoriza exclusivamente la publicación firmada 2026.08.29.1: EBRO Auto 1.0.1 y HABRO Companion 0.3.30, con orígenes y URLs exactos.
