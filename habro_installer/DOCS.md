@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.31
+# HABRO Installer 0.1.32
 
 ## Qué hace
 
@@ -29,6 +29,8 @@
 - usa el rol mínimo `homeassistant` de Supervisor para consultar y reiniciar únicamente Core; no recibe permisos de backup, host, red, sistema operativo, apps ni administración.
 - verifica de forma reanudable Core operativo, recibo aceptado, versiones autorizadas y árbol activo exacto antes de completar el journal.
 - conecta ambas etapas al recorrido guiado: tras la única confirmación, HABRO continúa, reinicia exclusivamente Core, espera su regreso, verifica la instalación y completa o restaura sin controles técnicos adicionales.
+- reconoce una única copia de rollback huérfana de otra transacción solo cuando su ruta es canónica y conserva exactamente el contenido ajeno a HABRO; la preparación no la modifica y su retirada queda incluida en la confirmación visible.
+- retira las copias de recuperación mediante una cuarentena atómica reanudable y elimina el rollback de las transacciones nuevas únicamente después de verificar el estado `completed`.
 
 ## Qué no hace todavía
 
@@ -36,4 +38,4 @@ Después de instalar y verificar los componentes, muestra **Configurar HABRO**, 
 
 ## Uso
 
-Inicia la app y pulsa **Abrir interfaz web**. La pantalla abre primero y calcula después el diagnóstico y el estado persistido. Confirma una sola vez cuando la operación esté preparada; HABRO instala, reinicia y verifica. Al terminar, pulsa **Configurar HABRO** e introduce las credenciales EBRO en el formulario oficial de Home Assistant. Si existe una operación exportable, la evidencia segura aparece en su propio bloque.
+Inicia la app y pulsa **Abrir interfaz web**. La pantalla abre primero y calcula después el diagnóstico y el estado persistido. Mantenla abierta y no repitas acciones mientras HABRO prepara, instala, reinicia o verifica. Confirma una sola vez cuando la operación esté preparada; si se ha validado una copia de recuperación anterior, su retirada segura forma parte de esa misma autorización. Al terminar, pulsa **Configurar HABRO** e introduce las credenciales EBRO en el formulario oficial de Home Assistant. Si existe una operación exportable, la evidencia segura aparece en su propio bloque.

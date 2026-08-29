@@ -9,3 +9,5 @@ Para completar ese recorrido declara el rol mínimo `homeassistant` de Superviso
 La respuesta inicial de Ingress es una pantalla estática y completa. El estado persistido, la evidencia segura y el diagnóstico se cargan después para que una verificación física lenta nunca impida abrir la interfaz.
 
 Desde 0.1.31, la interfaz mantiene visible qué está haciendo HABRO, pide conservar abierta la pantalla y explica el siguiente paso esperado. Mientras una operación está activa no presenta el estado `idle` ni sugiere repetirla; **Reintentar preparación** solo aparece después de un fallo real y seguro.
+
+Desde 0.1.32, una reinstalación puede reconocer una única copia de rollback huérfana de una transacción anterior sin ignorar las protecciones del destino. La preparación verifica su ruta, huella y contenido ajeno sin modificarla; su retirada atómica y reanudable solo ocurre dentro de la misma confirmación visible. Las transacciones nuevas eliminan su rollback después de completar la verificación para que una desinstalación posterior del Installer no vuelva a dejar ese estado.
