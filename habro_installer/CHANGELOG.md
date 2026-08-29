@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.35
+
+- Muestra que HABRO está verificando el historial seguro y preparando la actualización mientras releva una transacción terminal anterior.
+- Oculta el paso de configuración completada durante ese relevo para no presentar un éxito antiguo como resultado de la actualización actual.
+- Conserva sin cambios la validación histórica exacta, el archivo persistente del journal y la reparación segura 0.3.30 → 0.3.31 introducidos en 0.1.34.
+
 ## 0.1.34
 
 - Verifica las evidencias terminales de publicaciones anteriores únicamente contra la política firmada exacta con la que se instalaron.
