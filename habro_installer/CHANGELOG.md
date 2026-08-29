@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.32
+
+- Recupera de forma segura una única copia de rollback huérfana dejada por una instalación anterior, incluso si HABRO Installer se desinstaló y perdió su journal propio.
+- Mantiene la preparación en solo lectura: comprueba nombre canónico, huella completa y contenido ajeno antes de incluir la retirada en la misma confirmación visible de instalación.
+- Retira el rollback mediante una cuarentena atómica y reanudable; cualquier ruta ambigua, múltiple o con contenido ajeno distinto continúa bloqueando la operación.
+- Finaliza las nuevas transacciones eliminando su rollback únicamente después de alcanzar `completed`, sin perder la verificación estable frente a bytecode de ejecución.
+- Explica en la pantalla qué ocurrirá con una copia anterior y recuerda mantenerla abierta, pulsar una sola vez y esperar la continuación automática.
+
 ## 0.1.31
 
 - Muestra de forma persistente qué está haciendo HABRO, qué debe esperar la persona y cuál será el siguiente paso.
