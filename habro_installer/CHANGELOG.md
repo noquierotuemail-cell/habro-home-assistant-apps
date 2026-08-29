@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.30
+
+- Autoriza exclusivamente la publicación firmada 2026.08.29.1: EBRO Auto 1.0.1 y HABRO Companion 0.3.30, con orígenes y URLs exactos.
+- Conserva instalación limpia, actualización desde 1.0.0/0.3.29, reparación, reinicio, verificación y rollback bajo la misma transacción reanudable.
+- Tras completar la verificación muestra una única acción **Configurar HABRO**, que abre el config flow oficial de EBRO fuera de Ingress.
+- HABRO Installer no solicita, lee, guarda ni registra credenciales; EBRO Auto encadena HABRO Companion mediante el `entry_id` exacto.
+- Mantiene `boot: manual_only`, el rol mínimo `homeassistant` y la única confirmación de escritura visible.
+
 ## 0.1.29
 
 - Corrige el smoke físico de 0.1.28: `/core/check` importó los componentes y creó bytecode bajo `__pycache__`, que la huella del árbol completo interpretó como una alteración del código.
