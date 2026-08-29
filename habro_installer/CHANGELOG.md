@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.33
+
+- Publica la versión firmada `2026.08.29.2`: conserva EBRO Auto 1.0.1 y actualiza HABRO Companion a 0.3.31.
+- Evita que la consulta remota opcional de la entidad de actualización bloquee el arranque de HABRO Companion.
+- Mantiene oculto el paso técnico de ejecución tras «Confirmar e instalar» y reintenta automáticamente si Home Assistant devuelve un conflicto transitorio.
+- Consulta el estado en segundo plano mientras una operación larga sigue abierta, de modo que la Web UI refleja el reinicio y la verificación sin quedarse visualmente congelada.
+- Muestra tiempo transcurrido y avisa de que el reinicio y la verificación pueden tardar hasta 10 minutos; si se supera ese tiempo, pide no repetir la instalación y conservar la evidencia segura.
+
 ## 0.1.32
 
 - Recupera de forma segura una única copia de rollback huérfana dejada por una instalación anterior, incluso si HABRO Installer se desinstaló y perdió su journal propio.
