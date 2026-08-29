@@ -1,4 +1,4 @@
-# HABRO Installer 0.1.29
+# HABRO Installer 0.1.30
 
 ## Qué hace
 
@@ -32,8 +32,8 @@
 
 ## Qué no hace todavía
 
-No configura todavía las cuentas ni crea entradas de integración. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`. La preparación automática no modifica los componentes activos; la sustitución requiere una única aprobación visible y no solicita credenciales EBRO.
+Después de instalar y verificar los componentes, muestra **Configurar HABRO**, que abre el config flow oficial de EBRO en Home Assistant. Las credenciales se introducen únicamente allí; HABRO Installer no las lee, almacena ni registra. EBRO Auto 1.0.1 inicia después el flujo de HABRO Companion 0.3.30 con el `entry_id` exacto. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`.
 
 ## Uso
 
-Inicia la app y pulsa **Abrir interfaz web**. La pantalla abre primero y calcula después el diagnóstico y el estado persistido. Si existe una operación exportable, la evidencia segura aparece en su propio bloque, sin necesidad de abrir la información de diagnóstico.
+Inicia la app y pulsa **Abrir interfaz web**. La pantalla abre primero y calcula después el diagnóstico y el estado persistido. Confirma una sola vez cuando la operación esté preparada; HABRO instala, reinicia y verifica. Al terminar, pulsa **Configurar HABRO** e introduce las credenciales EBRO en el formulario oficial de Home Assistant. Si existe una operación exportable, la evidencia segura aparece en su propio bloque.
