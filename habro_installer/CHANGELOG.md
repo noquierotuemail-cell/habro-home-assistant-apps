@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.36
+
+- Muestra una cuenta atrás visible desde 10:00 durante la preparación y durante el recorrido de instalación, reinicio y verificación.
+- Indica expresamente que el plazo es orientativo y puede alcanzar 10 minutos; al superarlo, muestra el tiempo excedido sin declarar un fallo ni permitir repetir la operación.
+- Oculta el reloj en estados que requieren una acción del usuario o cuando la operación ya ha terminado.
+
 ## 0.1.35
 
 - Muestra que HABRO está verificando el historial seguro y preparando la actualización mientras releva una transacción terminal anterior.
