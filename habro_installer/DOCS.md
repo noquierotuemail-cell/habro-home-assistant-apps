@@ -1,7 +1,8 @@
-# HABRO Installer 0.1.32
+# HABRO Installer 0.1.33
 
 ## Qué hace
 
+- muestra el avance durante operaciones largas, consulta el estado cada pocos segundos y avisa de que el reinicio y la verificación pueden tardar hasta 10 minutos;
 - identifica la versión y arquitectura de Home Assistant;
 - detecta los archivos de EBRO Auto y HABRO Companion;
 - comprueba si Home Assistant ha cargado ambos dominios;
@@ -34,7 +35,7 @@
 
 ## Qué no hace todavía
 
-Después de instalar y verificar los componentes, muestra **Configurar HABRO**, que abre el config flow oficial de EBRO en Home Assistant. Las credenciales se introducen únicamente allí; HABRO Installer no las lee, almacena ni registra. EBRO Auto 1.0.1 inicia después el flujo de HABRO Companion 0.3.30 con el `entry_id` exacto. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`.
+Después de instalar y verificar los componentes, muestra **Configurar HABRO**, que abre el config flow oficial de EBRO en Home Assistant. Las credenciales se introducen únicamente allí; HABRO Installer no las lee, almacena ni registra. EBRO Auto 1.0.1 inicia después el flujo de HABRO Companion 0.3.31 con el `entry_id` exacto. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`.
 
 ## Uso
 
