@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.40
+
+- Registra antes del reinicio los trabajos existentes del Supervisor y reconoce después un nuevo trabajo `home_assistant_core_restart` como prueba persistente de que la solicitud fue entregada, incluso si la conexión HTTP se pierde.
+- Recupera de forma compatible los recibos 0.1.39 que quedaron en `prepared`: si el reinicio ya está ejecutándose continúa sin repetirlo; en caso contrario migra el recibo y realiza una única solicitud controlada.
+- Devuelve el estado ocupado como una instantánea de solo lectura con `200`, sin ejecutar sondas costosas; la Web UI cancela acciones automáticas y se limita a consultar hasta que cambie el journal.
+- Reserva la generación de evidencia exportable para estados terminales y evita que un fallo de presentación o hashing oculte un resultado ya verificado y persistido.
+- Reduce a 30 segundos la espera de la respuesta síncrona del reinicio y registra el inicio de cada operación para distinguir una petición activa de una pantalla detenida.
+
 ## 0.1.39
 
 - Serializa las consultas de estado con la misma exclusión mutua de la instalación, evitando que el sondeo revalide y rehaga hashes del árbol completo mientras se materializa el candidato.
