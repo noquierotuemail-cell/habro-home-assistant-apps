@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.44
+
+- Cierra el recorrido según el estado real de Home Assistant: **Configurar EBRO Auto**, **Completar HABRO Companion** o **HABRO está listo**.
+- Evita volver a pedir credenciales cuando EBRO Auto y HABRO Companion ya están cargados, y comunica expresamente que no queda ninguna acción pendiente.
+- Añade pruebas del cierre para las tres combinaciones de configuración y conserva la selección explícita cuando existe ambigüedad.
+
 ## 0.1.43
 
 - Mantiene una URL estable y versionada para `installer.js` y acepta huellas históricas estrictamente validadas, de modo que una WebView conservada por Home Assistant no quede sin JavaScript tras actualizar la app.
