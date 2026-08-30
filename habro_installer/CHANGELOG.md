@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.43
+
+- Mantiene una URL estable y versionada para `installer.js` y acepta huellas históricas estrictamente validadas, de modo que una WebView conservada por Home Assistant no quede sin JavaScript tras actualizar la app.
+- Renderiza desde el servidor el estado persistido de la operación —incluido el resultado completado y la acción **Configurar HABRO**— para que el recorrido no dependa de que JavaScript llegue a arrancar.
+- Sustituye la ruta obsoleta de regreso por **Ajustes → Aplicaciones → HABRO Installer → Abrir interfaz web** y añade pruebas para HTML sin JavaScript, activos antiguos y nombres de activo malformados.
+
 ## 0.1.42
 
 - Sustituye la comprobación redundante de Supervisor por la API de Core documentada y exige que Home Assistant responda con una versión válida antes de verificar el árbol instalado.
@@ -8,7 +14,7 @@
 
 ## 0.1.41
 
-- Antes de confirmar y mientras se instala, muestra una guía destacada con la ruta exacta para volver tras el reinicio: **Ajustes → Complementos → HABRO Installer → Abrir interfaz web**.
+- Antes de confirmar y mientras se instala, muestra una guía destacada con la ruta exacta para volver tras el reinicio: **Ajustes → Aplicaciones → HABRO Installer → Abrir interfaz web**.
 - Explica que el avance queda guardado y que volver a la interfaz solo reanuda la consulta; no hay que repetir la instalación ni pulsar otra vez ningún botón.
 - Al recuperar Home Assistant, confirma **Has vuelto al lugar correcto** y oculta la guía de regreso mientras completa automáticamente la verificación final.
 
