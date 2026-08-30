@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.39
+
+- Serializa las consultas de estado con la misma exclusión mutua de la instalación, evitando que el sondeo revalide y rehaga hashes del árbol completo mientras se materializa el candidato.
+- Cuando otra sesión posee la operación, devuelve `operation_busy` de inmediato y la Web UI espera mediante consultas de solo lectura; no vuelve a enviar `execute`.
+- Ante una respuesta de escritura perdida, recupera primero el estado persistido y solo reanuda el siguiente paso autorizado después de confirmar que el propietario anterior terminó.
+
 ## 0.1.38
 
 - Sirve el cliente de la Web UI desde un nombre de archivo derivado de su contenido, sin parámetros de consulta, para impedir que Home Assistant reutilice un JavaScript anterior.
