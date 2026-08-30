@@ -1,7 +1,8 @@
-# HABRO Installer 0.1.43
+# HABRO Installer 0.1.44
 
 ## Qué hace
 
+- cierra la configuración con un estado inequívoco: solicita EBRO Auto solo si falta, ofrece completar Companion si EBRO ya está cargado y muestra **HABRO está listo** cuando ambos están operativos.
 - mantiene una URL estable y versionada para el JavaScript, recupera WebViews que conserven una huella histórica válida y renderiza el estado persistido desde el servidor; incluso sin JavaScript, una instalación completada muestra **Configurar HABRO**.
 - muestra el avance durante operaciones largas, serializa los sondeos con la instalación y, si otra sesión posee el paso, espera mediante consultas de solo lectura sin repetir la escritura;
 - identifica la versión y arquitectura de Home Assistant;
