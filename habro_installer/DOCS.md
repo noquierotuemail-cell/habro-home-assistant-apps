@@ -1,8 +1,8 @@
-# HABRO Installer 0.1.33
+# HABRO Installer 0.1.39
 
 ## Qué hace
 
-- muestra el avance durante operaciones largas, consulta el estado cada pocos segundos y avisa de que el reinicio y la verificación pueden tardar hasta 10 minutos;
+- muestra el avance durante operaciones largas, serializa los sondeos con la instalación y, si otra sesión posee el paso, espera mediante consultas de solo lectura sin repetir la escritura;
 - identifica la versión y arquitectura de Home Assistant;
 - detecta los archivos de EBRO Auto y HABRO Companion;
 - comprueba si Home Assistant ha cargado ambos dominios;
