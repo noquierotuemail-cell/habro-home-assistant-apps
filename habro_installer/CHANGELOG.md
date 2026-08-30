@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.38
+
+- Sirve el cliente de la Web UI desde un nombre de archivo derivado de su contenido, sin parámetros de consulta, para impedir que Home Assistant reutilice un JavaScript anterior.
+- Mantiene oculto el reloj hasta que el cliente real ha arrancado y comprueba que avanza de 10:00 a 09:59.
+- Permite preparar automáticamente una actualización desde una instalación terminal perteneciente a una publicación histórica autorizada, sin exigir que su staging antiguo siga disponible.
+- Reintenta automáticamente la consulta de estado ante indisponibilidades transitorias, sin pedir al usuario que recargue o repita la operación.
+
 ## 0.1.37
 
 - Versiona la URL de `installer.js` para impedir que Home Assistant o su WebView combinen el HTML nuevo con un JavaScript anterior almacenado en caché.
