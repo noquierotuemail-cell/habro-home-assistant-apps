@@ -13,3 +13,6 @@ Desde 0.1.31, la interfaz mantiene visible qué está haciendo HABRO, pide conse
 Desde 0.1.33, la Web UI consulta el estado cada pocos segundos durante operaciones largas, mantiene ocultos los pasos técnicos y avisa de que el reinicio y la verificación pueden tardar hasta 10 minutos.
 
 Desde 0.1.32, una reinstalación puede reconocer una única copia de rollback huérfana de una transacción anterior sin ignorar las protecciones del destino. La preparación verifica su ruta, huella y contenido ajeno sin modificarla; su retirada atómica y reanudable solo ocurre dentro de la misma confirmación visible. Las transacciones nuevas eliminan su rollback después de completar la verificación para que una desinstalación posterior del Installer no vuelva a dejar ese estado.
+
+
+Desde 0.1.42, la continuación posterior al reinicio pertenece al proceso del Installer y no al navegador: un trabajador interno consulta la API documentada de Home Assistant y completa o restaura el journal después de verificar el árbol instalado aunque el WebView se haya cerrado. Solo los errores transitorios 502/503/504 permanecen en espera.

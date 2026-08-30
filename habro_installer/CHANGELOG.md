@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.42
+
+- Sustituye la comprobación redundante de Supervisor por la API de Core documentada y exige que Home Assistant responda con una versión válida antes de verificar el árbol instalado.
+- Reintenta únicamente errores transitorios de arranque (`502`, `503` y `504`); un rechazo permanente deja de presentarse como una espera infinita.
+- Reanuda la verificación y, si hiciera falta, el rollback desde un trabajador interno del Installer, aunque el WebView del móvil esté cerrado o no envíe ninguna petición.
+
 ## 0.1.41
 
 - Antes de confirmar y mientras se instala, muestra una guía destacada con la ruta exacta para volver tras el reinicio: **Ajustes → Complementos → HABRO Installer → Abrir interfaz web**.
