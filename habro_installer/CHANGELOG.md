@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.41
+
+- Antes de confirmar y mientras se instala, muestra una guía destacada con la ruta exacta para volver tras el reinicio: **Ajustes → Complementos → HABRO Installer → Abrir interfaz web**.
+- Explica que el avance queda guardado y que volver a la interfaz solo reanuda la consulta; no hay que repetir la instalación ni pulsar otra vez ningún botón.
+- Al recuperar Home Assistant, confirma **Has vuelto al lugar correcto** y oculta la guía de regreso mientras completa automáticamente la verificación final.
+
 ## 0.1.40
 
 - Registra antes del reinicio los trabajos existentes del Supervisor y reconoce después un nuevo trabajo `home_assistant_core_restart` como prueba persistente de que la solicitud fue entregada, incluso si la conexión HTTP se pierde.
