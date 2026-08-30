@@ -1,7 +1,8 @@
-# HABRO Installer 0.1.42
+# HABRO Installer 0.1.43
 
 ## Qué hace
 
+- mantiene una URL estable y versionada para el JavaScript, recupera WebViews que conserven una huella histórica válida y renderiza el estado persistido desde el servidor; incluso sin JavaScript, una instalación completada muestra **Configurar HABRO**.
 - muestra el avance durante operaciones largas, serializa los sondeos con la instalación y, si otra sesión posee el paso, espera mediante consultas de solo lectura sin repetir la escritura;
 - identifica la versión y arquitectura de Home Assistant;
 - detecta los archivos de EBRO Auto y HABRO Companion;
@@ -30,7 +31,7 @@
 - usa el rol mínimo `homeassistant` de Supervisor para consultar y reiniciar únicamente Core; no recibe permisos de backup, host, red, sistema operativo, apps ni administración.
 - verifica de forma reanudable la API documentada de Core, el recibo aceptado, las versiones autorizadas y el árbol activo exacto antes de completar el journal; no exige configurar las integraciones antes de mostrar **Configurar HABRO**.
 - mantiene un trabajador interno que reanuda la verificación o el rollback posterior al reinicio aunque no haya un navegador abierto; el WebView se limita a observar el journal.
-- conecta ambas etapas al recorrido guiado: tras la única confirmación, HABRO continúa, reinicia exclusivamente Core, espera su regreso, verifica la instalación y completa o restaura sin controles técnicos adicionales. Antes del reinicio muestra la ruta exacta **Ajustes → Complementos → HABRO Installer → Abrir interfaz web** por si Home Assistant cierra el WebView; al volver, la operación se recupera sin repetir ninguna acción.
+- conecta ambas etapas al recorrido guiado: tras la única confirmación, HABRO continúa, reinicia exclusivamente Core, espera su regreso, verifica la instalación y completa o restaura sin controles técnicos adicionales. Antes del reinicio muestra la ruta exacta **Ajustes → Aplicaciones → HABRO Installer → Abrir interfaz web** por si Home Assistant cierra el WebView; al volver, la operación se recupera sin repetir ninguna acción.
 - reconoce una única copia de rollback huérfana de otra transacción solo cuando su ruta es canónica y conserva exactamente el contenido ajeno a HABRO; la preparación no la modifica y su retirada queda incluida en la confirmación visible.
 - retira las copias de recuperación mediante una cuarentena atómica reanudable y elimina el rollback de las transacciones nuevas únicamente después de verificar el estado `completed`.
 
@@ -40,4 +41,4 @@ Después de instalar y verificar los componentes, muestra **Configurar HABRO**, 
 
 ## Uso
 
-Inicia la app y pulsa **Abrir interfaz web**. La pantalla abre primero y calcula después el diagnóstico y el estado persistido. Confirma una sola vez cuando la operación esté preparada; si se ha validado una copia de recuperación anterior, su retirada segura forma parte de esa misma autorización. Si Home Assistant deja de mostrar la pantalla durante el reinicio, espera a que vuelva y entra en **Ajustes → Complementos → HABRO Installer → Abrir interfaz web**. La verificación se reanuda dentro del propio Installer incluso con el WebView cerrado; volver a la pantalla solo permite observar el resultado. No pulses instalar ni reintentar. Al terminar, pulsa **Configurar HABRO** e introduce las credenciales EBRO en el formulario oficial de Home Assistant. Si existe una operación exportable, la evidencia segura aparece en su propio bloque.
+Inicia la app y pulsa **Abrir interfaz web**. La pantalla abre primero y calcula después el diagnóstico y el estado persistido. Confirma una sola vez cuando la operación esté preparada; si se ha validado una copia de recuperación anterior, su retirada segura forma parte de esa misma autorización. Si Home Assistant deja de mostrar la pantalla durante el reinicio, espera a que vuelva y entra en **Ajustes → Aplicaciones → HABRO Installer → Abrir interfaz web**. La verificación se reanuda dentro del propio Installer incluso con el WebView cerrado; volver a la pantalla solo permite observar el resultado. No pulses instalar ni reintentar. Al terminar, pulsa **Configurar HABRO** e introduce las credenciales EBRO en el formulario oficial de Home Assistant. Si existe una operación exportable, la evidencia segura aparece en su propio bloque.
