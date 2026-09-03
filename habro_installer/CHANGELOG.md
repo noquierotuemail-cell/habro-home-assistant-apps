@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.1.48
+
+- Depura los errores visibles del diagnóstico para no exponer tokens, rutas privadas ni detalles internos.
+- Rechaza y oculta versiones de manifest no válidas en lugar de mostrarlas en el informe.
+- Verifica en una matriz de interfaz los ocho estados de la Fase 7 y su única continuación segura.
+
+
+## 0.1.47
+
+- Conecta la decisión de la Fase 7 con la preparación transaccional existente y mantiene una única confirmación explícita antes de modificar los componentes activos.
+- Impide preparar archivos cuando el sistema está listo, solo necesita configuración, falta evidencia o existe un bloqueo.
+- Bloquea cualquier reparación o actualización conjunta que degradaría un componente más reciente.
+
+
+## 0.1.46
+
+- Inicia la Fase 7 con un clasificador puro que distingue sistema listo, configuración incompleta, reparación, actualización, reanudación, rollback, reintento y bloqueo.
+- Acepta versiones posteriores dentro de la misma línea compatible y prohíbe degradarlas; Companion 0.3.35 no se sustituye por el paquete 0.3.32 del Installer.
+- Publica la decisión como parte de `habro.installation_report.v2`, sin añadir todavía endpoints ni acciones de reparación.
+
+
+## 0.1.45
+
+- Publica la versión firmada `2026.08.30.1`: conserva EBRO Auto 1.0.1 y actualiza HABRO Companion a 0.3.32 con el nombre público HABRO.
+- Conserva como publicaciones históricas autorizadas 0.3.30 y 0.3.31 para que una operación ya completada pueda avanzar sin perder su journal ni repetir credenciales.
+- Alinea la confirmación del Installer, la documentación y las pruebas con la versión que realmente instala.
+
 ## 0.1.44
 
 - Cierra el recorrido según el estado real de Home Assistant: **Configurar EBRO Auto**, **Completar HABRO Companion** o **HABRO está listo**.
