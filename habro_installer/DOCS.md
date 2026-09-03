@@ -1,6 +1,16 @@
-# HABRO Installer 0.1.44
+# HABRO Installer 0.1.48
 
 ## Qué hace
+
+- autoriza la preparación solo cuando el diagnóstico indica reparación o actualización;
+- depura errores y versiones de manifest no válidas antes de mostrarlos en el informe;
+- conserva una única confirmación visible antes de modificar los componentes activos;
+- deriva una instalación sana o incompleta a su salida correcta sin reinstalar archivos;
+- bloquea paquetes conjuntos que degradarían una versión más reciente;
+
+- clasifica el estado de reparación de forma determinista y muestra una única recomendación segura;
+- diferencia configuración incompleta de archivos ausentes o dañados;
+- reconoce versiones posteriores compatibles sin degradarlas y bloquea líneas incompatibles;
 
 - cierra la configuración con un estado inequívoco: solicita EBRO Auto solo si falta, ofrece completar Companion si EBRO ya está cargado y muestra **HABRO está listo** cuando ambos están operativos.
 - mantiene una URL estable y versionada para el JavaScript, recupera WebViews que conserven una huella histórica válida y renderiza el estado persistido desde el servidor; incluso sin JavaScript, una instalación completada muestra **Configurar HABRO**.
@@ -38,7 +48,10 @@
 
 ## Qué no hace todavía
 
-Después de instalar y verificar los componentes, muestra **Configurar HABRO**, que abre el config flow oficial de EBRO en Home Assistant. Las credenciales se introducen únicamente allí; HABRO Installer no las lee, almacena ni registra. EBRO Auto 1.0.1 inicia después el flujo de HABRO Companion 0.3.31 con el `entry_id` exacto. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`.
+La clasificación de la Fase 7 es informativa en esta versión. Todavía no publica botones ni endpoints nuevos para preparar o ejecutar una reparación a partir de esa decisión.
+
+
+Después de instalar y verificar los componentes, muestra **Configurar HABRO**, que abre el config flow oficial de EBRO en Home Assistant. Las credenciales se introducen únicamente allí; HABRO Installer no las lee, almacena ni registra. EBRO Auto 1.0.1 inicia después el flujo de HABRO Companion 0.3.32 con el `entry_id` exacto. El montaje de configuración es escribible porque Home Assistant no ofrece un montaje limitado a un subdirectorio, pero la única ruta admitida por el código transaccional es `/homeassistant/custom_components`.
 
 ## Uso
 
