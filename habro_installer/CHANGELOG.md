@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.49
+
+- Sustituye «Preparando HABRO» por «Estado de HABRO», válido tanto durante la comprobación como al finalizar.
+- Cuando EBRO Auto y HABRO Companion ya están cargados, muestra un único resultado «HABRO está listo» sin repetir una segunda tarjeta.
+
+
 ## 0.1.48
 
 - Depura los errores visibles del diagnóstico para no exponer tokens, rutas privadas ni detalles internos.
