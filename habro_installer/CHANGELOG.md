@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.51
+
+- Recupera automáticamente una preparación anterior fallida cuando el journal demuestra que la operación se detuvo antes de modificar el árbol activo; conserva el historial y bloquea cualquier fallo posterior al inicio del commit o del rollback.
+- Permite que el diagnóstico vuelva a preparar la reparación conjunta cuando falta HABRO Companion y el único bloqueo era ese fallo previo recuperable.
+- En móviles abre la ruta exacta del Installer mediante el enlace nativo `homeassistant://navigate`; si la app no está disponible, vuelve a la dirección web indicada sin guardar ni transmitirla.
+
+## 0.1.50
+
+- Añade al estado final «HABRO está listo» una acción para llevar al usuario a la instalación de la PWA canónica en `app.habroremote.com`, sin intentar instalar la interfaz Ingress de Home Assistant.
+- En navegadores Chromium compatibles, la página de instalación usa el diálogo nativo `beforeinstallprompt`; en Safari y Chrome de iPhone/iPad muestra la guía exacta de «Compartir» → «Añadir a pantalla de inicio».
+- Si HABRO ya se ejecuta como PWA instalada, oculta la acción de instalación y ofrece acceso directo a la app.
+
 ## 0.1.49
 
 - Sustituye «Preparando HABRO» por «Estado de HABRO», válido tanto durante la comprobación como al finalizar.
