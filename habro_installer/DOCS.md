@@ -1,4 +1,8 @@
-# HABRO Installer 0.1.52
+# HABRO Installer 0.1.53
+
+La instalación solo está terminada cuando la pantalla muestra **HABRO está listo**. El estado **Los archivos de HABRO están instalados y verificados** confirma la parte de archivos, pero puede quedar un único paso oficial para conectar EBRO Auto o HABRO Companion dentro de Home Assistant.
+
+Si el servidor de paquetes no responde, comprueba la conexión y realiza un único reintento explícito. Si HABRO rechaza un paquete porque no coincide con la publicación firmada, no reintentes: copia el registro de HABRO Installer y envíalo para revisar la publicación.
 
 ## Qué hace
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.53
+
+- Distingue una descarga no disponible de un paquete que no coincide con la publicación firmada, manteniendo privados los detalles internos.
+- Detiene los reintentos ante una validación fallida y muestra al usuario la acción segura correspondiente.
+- Separa «archivos instalados y verificados» de «HABRO está listo» y aclara que conectar Companion no reinstala ni modifica EBRO Auto.
+- Añade una comprobación posterior al despliegue que compara byte a byte las tres rutas activas de paquetes con la publicación firmada del repositorio.
+
 ## 0.1.52
 
 - Añade una instalación directa para el caso exacto en que EBRO Auto está correcto y cargado, pero HABRO Companion no existe.
