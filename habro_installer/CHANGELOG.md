@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.52
+
+- Añade una instalación directa para el caso exacto en que EBRO Auto está correcto y cargado, pero HABRO Companion no existe.
+- Verifica el paquete firmado y cada archivo copiado, instala únicamente `ebro_remoteapp` mediante una publicación aislada y no modifica ni sustituye EBRO Auto ni las demás integraciones.
+- Solicita automáticamente el reinicio de Home Assistant Core y muestra el resultado real del intento; un error ya no vuelve silenciosamente a la misma pantalla.
+
 ## 0.1.51
 
 - Recupera automáticamente una preparación anterior fallida cuando el journal demuestra que la operación se detuvo antes de modificar el árbol activo; conserva el historial y bloquea cualquier fallo posterior al inicio del commit o del rollback.

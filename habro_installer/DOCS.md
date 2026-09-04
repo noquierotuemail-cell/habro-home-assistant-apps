@@ -1,6 +1,9 @@
-# HABRO Installer 0.1.49
+# HABRO Installer 0.1.52
 
 ## Qué hace
+
+- cuando EBRO Auto ya está correcto y cargado y únicamente falta HABRO Companion, ofrece **Instalar HABRO Companion**;
+- esa ruta verifica la publicación firmada, copia solo `ebro_remoteapp`, comprueba cada archivo y reinicia Home Assistant Core sin sustituir EBRO Auto ni el resto de `custom_components`;
 
 - autoriza la preparación solo cuando el diagnóstico indica reparación o actualización;
 - depura errores y versiones de manifest no válidas antes de mostrarlos en el informe;

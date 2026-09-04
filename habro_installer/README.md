@@ -1,5 +1,7 @@
 # HABRO Installer
 
+Desde 0.1.52, cuando EBRO Auto está correcto y cargado pero falta HABRO Companion, la interfaz ofrece una instalación directa. Verifica el paquete firmado, publica únicamente `ebro_remoteapp` y reinicia Home Assistant Core; no reemplaza EBRO Auto ni el resto de `custom_components`.
+
 Desde 0.1.47, el diagnóstico es también la autorización obligatoria de la preparación: solo `repair_available` y `update_available` pueden preparar la transacción existente. `ready`, configuración incompleta, diagnóstico insuficiente o bloqueo no escriben. La persona mantiene una única confirmación antes de aplicar la mutación activa.
 
 Desde 0.1.46, el diagnóstico incorpora el clasificador de la Fase 7. Distingue una instalación lista, configuración incompleta, reparación, actualización, continuación, rollback, reintento y bloqueo. La clasificación es de solo lectura: esta versión no añade acciones de reparación. Una versión posterior compatible nunca se degrada al paquete anterior del Installer.
